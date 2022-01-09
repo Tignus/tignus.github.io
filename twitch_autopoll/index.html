@@ -2,18 +2,29 @@
 <head>
     <title>Poll management token generator</title>
     <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript">
+    function toggleHide() {
+        var x = document.getElementById("access_token");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    </script>
 </head>
 <body>
-    <p>Generate a new token with the link below.<br>
-        This token is only visible in your browser and will not be stored.</p>
+    <br>
+    <p>This token is only visible in your browser and will not be stored.</p>
     <p style="color:red;display:inline-block;">Warning :</p>
-    <p style="display:inline-block;"> Do not show this token on stream. If you do, disconnect "Auto Poll" from the applications list <a href="https://www.twitch.tv/settings/connections" target="_blank">here</a> and regenerate a new token.</p>
+    <p style="display:inline-block;"> Do not show it on stream. If you do, disconnect "Auto Poll" from the applications list <a href="https://www.twitch.tv/settings/connections" target="_blank">here</a> and regenerate a new token.</p>
     </p>
+    <p>Your poll management token:</p>
+    <div id="access_token" style="display:block;"></div>
+    <button onclick="toggleHide()">Unhide</button>
     <ul>
-        <a href="" id="authorize_poll">[Generate token]</a>
+        <a href="" id="authorize_poll">[Regenerate token]</a>
     </ul>
-    <div id="access_token"></div>
-
     <script type="text/javascript">
         var client_id = 'u2fbqgwg9mmeol823jnyfk4usqt1uh';
         var redirect = 'https://tignus.github.io/twitch_autopoll';
