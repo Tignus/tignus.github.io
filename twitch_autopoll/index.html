@@ -4,11 +4,13 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <p>Generate your token with the link below :</p>
+    <p>Generate a new token with the link below.<br>
+        This token is only visible in your browser and will not be stored.</p>
+    <p style="color:red;display:inline-block;">Warning :</p>
+    <p style="display:inline-block;"> Do not show this token on stream. If you do, disconnect "Auto Poll" from the applications list <a href="https://www.twitch.tv/settings/connections" target="_blank">here</a> and regenerate a new token.</p>
+    </p>
     <ul>
-        <li>
-            <a href="" id="authorize_poll">[Generate token]</a>
-        </li>
+        <a href="" id="authorize_poll">[Generate token]</a>
     </ul>
     <div id="access_token"></div>
 
