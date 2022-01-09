@@ -20,8 +20,8 @@
     <p style="display:inline-block;"> Do not show it on stream. If you do, disconnect "Auto Poll" from the applications list <a href="https://www.twitch.tv/settings/connections" target="_blank">here</a> and regenerate a new token.</p>
     </p>
     <p>Your poll management token:</p>
+    <button onclick="toggleHide()">Show</button>
     <div id="access_token" style="display:block;"></div>
-    <button onclick="toggleHide()">Unhide</button>
     <ul>
         <a href="" id="authorize_poll">[Regenerate token]</a>
     </ul>
@@ -36,7 +36,9 @@
             var parsedHash = new URLSearchParams(window.location.hash.substr(1));
             if (parsedHash.get('access_token')) {
                 var access_token = parsedHash.get('access_token');
-                document.getElementById('access_token').textContent = 'Your poll management token: ' + access_token;
+                at = document.getElementById('access_token')
+                at.textContent = access_token;
+                at.style.display = "none";
             }
         } else if (document.location.search && document.location.search != '') {
             var parsedParams = new URLSearchParams(window.location.search);
